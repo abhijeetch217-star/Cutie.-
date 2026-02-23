@@ -3,13 +3,14 @@
   position:fixed;
   width:100%;
   height:100%;
-  background:#ff9a9e;
+  background:#ff6f91;
   display:flex;
   justify-content:center;
   align-items:center;
   z-index:999;
   color:white;
-  font-size:20px;
+  font-size:22px;
+  font-weight:bold;
 }
 
 /* BODY */
@@ -17,8 +18,10 @@ body{
   margin:0;
   font-family:sans-serif;
   overflow:hidden;
-  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-  color:white;
+
+  /* BETTER SOFT GRADIENT */
+  background:linear-gradient(135deg,#ffdde1,#ee9ca7,#fad0c4);
+  color:#2b2b2b; /* DARK TEXT */
 }
 
 /* PAGE */
@@ -32,6 +35,7 @@ body{
   flex-direction:column;
   text-align:center;
   padding:20px;
+
   opacity:0;
   transform:scale(0.95);
   transition:opacity 0.6s ease, transform 0.6s ease;
@@ -44,41 +48,67 @@ body{
 }
 
 /* TEXT */
-h1{font-size:6vw;}
-p{font-size:4vw;}
+h1{
+  font-size:6vw;
+  color:#ff2e63;
+  text-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+p{
+  font-size:4vw;
+  color:#333;
+  max-width:90%;
+  line-height:1.5;
+}
 
 /* GIF */
 .gif{
   width:200px;
   margin:15px 0;
-  border-radius:15px;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* BUTTONS */
+/* BUTTON CONTAINER */
 .btns{
   display:flex;
-  gap:10px;
-  margin-top:15px;
+  gap:12px;
+  margin-top:20px;
 }
 
+/* BUTTON DESIGN */
 button{
-  padding:10px 18px;
+  padding:12px 22px;
   border:none;
-  border-radius:25px;
-  background:white;
-  color:#ff4d6d;
+  border-radius:30px;
+
+  /* SHAPE + GRADIENT */
+  background:linear-gradient(135deg,#ff4d6d,#ff758c);
+  color:white;
+
+  font-size:15px;
+  font-weight:bold;
   cursor:pointer;
-  transition:0.3s;
+
+  box-shadow:0 6px 15px rgba(255,77,109,0.4);
+  transition:all 0.3s ease;
 }
 
+/* HOVER EFFECT */
 button:hover{
   transform:scale(1.1);
+  box-shadow:0 10px 25px rgba(255,77,109,0.6);
+}
+
+/* CLICK EFFECT */
+button:active{
+  transform:scale(0.95);
 }
 
 /* TYPING */
 .typing{
   overflow:hidden;
-  border-right:2px solid white;
+  border-right:2px solid #ff2e63;
   white-space:nowrap;
   width:0;
   animation:typing 2s steps(30,end) forwards, blink .6s infinite;
@@ -103,7 +133,7 @@ button:hover{
 .bg span{
   position:absolute;
   animation:float 8s linear infinite;
-  opacity:0.4;
+  opacity:0.5;
 }
 
 @keyframes float{
